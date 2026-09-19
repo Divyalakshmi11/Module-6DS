@@ -34,34 +34,42 @@ To write a Python program to create a Parent class `Bird` and inherit two child 
 ### PROGRAM
 
 ```
-from abc import ABC, abstractmethod   
-class Car(ABC):   
-    def mileage(self):
-        pass
-class Tesla(Car):   
-    def mileage(self):   
-        print("The mileage is 30kmph")   
-class Suzuki(Car):   
-    def mileage(self):   
-        print("The mileage is 25kmph ")   
-class Duster(Car):   
-    def mileage(self):
-        print("The mileage is 24kmph ")   
-class Renault(Car):
-    def mileage(self):
-        print("The mileage is 27kmph ")   
-t = Tesla()
-t.mileage()
-r = Renault()
-r.mileage()
-s = Suzuki()   
-s.mileage()   
-d = Duster()   
-d.mileage()
+class Bird:
+    def intro(self):
+        print("There are many types of birds.")
+	
+    def flight(self):
+        print("Most of the birds can fly but some cannot.")
+
+class sparrow(Bird):
+    def flight(self):
+        print("Sparrows can fly.")
+	
+class ostrich(Bird):
+    def flight(self):
+        print("Ostriches cannot fly.")
+	
+
+obj_bird = Bird()
+obj_spr = sparrow()
+obj_ost = ostrich() 
+
+
+obj_bird.intro()
+obj_bird.flight()
+
+obj_spr.intro()
+obj_spr.flight()
+
+obj_ost.intro()
+obj_ost.flight()
+
+
 ```
 
 ### OUTPUT
-<img width="1181" height="257" alt="image" src="https://github.com/user-attachments/assets/742f3f10-1bf7-46ac-b200-8e90f4e2679c" />
+<img width="822" height="254" alt="image" src="https://github.com/user-attachments/assets/8f36dd8e-e55d-46f8-8ea6-80a055606bd4" />
+
 
 
 ### RESULT
