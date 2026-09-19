@@ -34,28 +34,56 @@ To write a Python program to define the abstract base class named `Polygon` and 
 ### PROGRAM
 
 ```
-from abc import ABC
-class Shape(ABC):
-    def calculate_area(self):
+from abc import ABC, abstractmethod
+
+# Abstract base class
+class Polygon(ABC):
+
+    @abstractmethod
+    def sides(self):
         pass
-class Rectangle(Shape):
-    length = 5
-    breadth =3 
-    def calculate_area(self):
-        return self.length * self.breadth
-class Circle(Shape):
-  radius = 4
-  def calculate_area(self):
-      return 3.14 * self.radius * self.radius
-rec=Rectangle()
-cir=Circle()
-print("Area of a rectangle:", rec.calculate_area())
-print("Area of a circle:", cir.calculate_area())
+
+# Triangle class
+class Triangle(Polygon):
+    def sides(self):
+        print("Triangle has 3 sides")
+
+# Quadrilateral class
+class Quadrilateral(Polygon):
+    def sides(self):
+        print("I have 4 sides")
+
+# Pentagon class
+class Pentagon(Polygon):
+    def sides(self):
+        print("Pentagon has 5 sides")
+
+# Hexagon class
+class Hexagon(Polygon):
+    def sides(self):
+        print("Hexagon has 6 sides")
+
+# Create objects and invoke the method
+t = Triangle()
+t.sides()
+
+q = Quadrilateral()
+q.sides()
+
+p = Pentagon()
+p.sides()
+
+h = Hexagon()
+h.sides()
+
+
+
 
 ```
 
 ### OUTPUT
-<img width="1182" height="216" alt="image" src="https://github.com/user-attachments/assets/9d63a2b6-2b3f-4a0c-8526-f0cca72d9be3" />
+<img width="501" height="273" alt="image" src="https://github.com/user-attachments/assets/53cd5023-7274-47a6-9d2d-91dcd7bd0219" />
+
 
 
 ### RESULT
