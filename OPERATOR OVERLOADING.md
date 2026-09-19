@@ -32,31 +32,35 @@ To write a Python program to perform division of two complex numbers using the b
 ### PROGRAM
 
 ```
-class Add:
-    def __init__(self,a):
-        self.a=a
-    def __add__(self,other):
-        if isinstance(self.a,int) and isinstance(other.a,int):
-            print("adding integers :",self.a+other.a)
-        elif isinstance(self.a,str) and isinstance(other.a,str):
-            print("adding strings :",self.a+other.a)
-        else:
-            print("Incompatible types!")
-a=int(input())
-b=int(input())
-c=input()
-d=input()
-a1=Add(a)
-a2=Add(b)
-s1=Add(c)
-s2=Add(d)
-a1+a2
-s1+s2
+
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __truediv__(self, other):
+        real_part = self.real / other.real
+        imag_part = self.imag / other.imag
+        return Complex(real_part, imag_part)
+
+    def __repr__(self):
+        return f"({self.real:.1f}, {self.imag:.1f})"
+
+
+Ob1 = Complex(10, 21)
+Ob2 = Complex(2, 3)
+
+result = Ob1 / Ob2
+
+print(result)
+
+
 ```
 
 ### OUTPUT
-<img width="1185" height="378" alt="image" src="https://github.com/user-attachments/assets/fac6116a-c55f-4043-9e79-fa549f593330" />
 
+
+<img width="735" height="171" alt="image" src="https://github.com/user-attachments/assets/34503b4c-4712-4673-8c01-a3abea1c1d7e" />
 
 ### RESULT
 Therefore, the output is the example to write a Python program to perform division of two complex numbers using the binary '/' operator overloading. Class name: Complex, where the objects Ob1 = Complex(10, 21) and Ob2 = Complex(2, 3) represent complex numbers.
